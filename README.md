@@ -64,11 +64,9 @@ This project simulates a real-company analytics workflow using machine learning 
 
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit)
 
-### **Testing & CI**
+### **Testing**
 
 ![PyTest](https://img.shields.io/badge/PyTest-Testing-0A9EDC?logo=pytest)
-
-![GitHub Actions](https://img.shields.io-badge/GitHub%20Actions-CI/CD-2088FF?logo=githubactions)
 
 ### **Utilities**
 
