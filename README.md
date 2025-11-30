@@ -212,25 +212,43 @@ Your dashboard contains the following **tabs**:
 
 # 🚀 **8. How to Run the Project**
 
-### ✅ **STEP 1 — Generate Synthetic Data (once only)**
+### ✅ **STEP 1 — Clone the Repository**
+
+```bash
+git clone https://github.com/girishshenoy16/Ecommerce-Revenue-Pricing-Optimizer.git
+cd Ecommerce-Revenue-Pricing-Optimizer
+```
+
+### ✅ **STEP 2 — Create Virtual Environment
+
+```bash
+python -m venv venv
+venv\Scripts\activate  # Windows
+```
+
+
+### ✅ **STEP 3 — Install Dependencies
+
+```bash
+python.exe -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### ✅ **STEP 4 — Generate Synthetic Data (once only)**
 
 ```
 python data/synthetic_generator.py
 ```
 
-### ✅ **STEP 2 — Clean the Data**
+### ✅ **STEP 5 — Clean the Data**
 
 ```
 python app/data_preprocessing.py
 ```
 
-### ❗ No need to run data preprocessing manually
-
-Your Streamlit dashboard handles cleaning & loading.
-
 ---
 
-### ✅ **STEP 3 — Launch the Streamlit App**
+### ✅ **STEP 6 — Launch the Streamlit App**
 
 ```
 streamlit run app/streamlit_app.py
@@ -238,7 +256,7 @@ streamlit run app/streamlit_app.py
 
 ---
 
-### ⭐ **STEP 4 — IMPORTANT FIRST RUN ACTIONS (DONE INSIDE STREAMLIT)**
+### ⭐ **STEP 7 — IMPORTANT FIRST RUN ACTIONS (DONE INSIDE STREAMLIT)**
 
 On first launch:
 
