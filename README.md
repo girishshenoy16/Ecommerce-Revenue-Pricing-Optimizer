@@ -54,7 +54,6 @@ This project simulates a real-company analytics workflow using machine learning 
 ### **Visualization**
 
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Charts-11557C?logo=python)
-![Plotly](https://img.shields.io-badge/Plotly-Interactive%20Charts-3F4F75?logo=plotly)
 
 ### **Models**
 
