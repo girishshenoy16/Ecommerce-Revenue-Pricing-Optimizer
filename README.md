@@ -67,6 +67,7 @@ This project simulates a real-company analytics workflow using machine learning 
 ### **Testing & CI**
 
 ![PyTest](https://img.shields.io/badge/PyTest-Testing-0A9EDC?logo=pytest)
+
 ![GitHub Actions](https://img.shields.io-badge/GitHub%20Actions-CI/CD-2088FF?logo=githubactions)
 
 ### **Utilities**
