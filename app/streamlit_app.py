@@ -18,14 +18,18 @@ from app.forecasting import train_revenue_model, forecast_with_scenario, FEATURE
 from app.pricing import estimate_price_elasticity, recommend_price, load_elasticity
 from app.insights import top_categories_by_revenue, promo_effect, daily_summary, data_quality_report
 from app.drift_utils import calculate_psi
-
-
+from streamlit import session_state
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 
+if "sidebar_state" not in session_state:
+    session_state.sidebar_state = "expanded"
+
+
 st.set_page_config(
     page_title="E-Commerce Revenue & Pricing Analytics",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state=st.session_state.sidebar_state
 )
 
 @st.cache_data
@@ -183,6 +187,10 @@ def main():
                     promo_shift=promo_shift,
                 )
 
+                baseline_future = forecast_with_scenario(daily_df, future_days=future_days)
+                uplift = future_df["predicted_revenue"].sum() - baseline_future["predicted_revenue"].sum()
+                st.info(f"Total revenue change vs baseline over {future_days} days: {uplift:,.2f}")
+
                 st.write("Forecasted Revenue under Scenario")
                 st.dataframe(future_df[["date", "predicted_revenue"]])
 
@@ -205,10 +213,6 @@ def main():
                 )
 
                 st.plotly_chart(fig, use_container_width=True)
-
-                baseline_future = forecast_with_scenario(daily_df, future_days=future_days)
-                uplift = future_df["predicted_revenue"].sum() - baseline_future["predicted_revenue"].sum()
-                st.info(f"Total revenue change vs baseline over {future_days} days: {uplift:,.2f}")
 
             except Exception as e:
                 st.warning("Please train the revenue model first to enable this feature.")
@@ -272,7 +276,7 @@ def main():
             st.subheader("🧠 Model Explainability using SHAP")
 
             st.write("""
-                SHAP (SHapley Additive exPlanations) helps us understand
+                SHAP (Shapley Additive Explanations) helps us understand
                 how each feature contributes to the model's revenue prediction.
             """)
 
