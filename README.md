@@ -8,7 +8,7 @@
 
 <img src="screenshots/dashboard_overview.png" width="100%"/>
 
-<br/><br/>
+<br/>
 
 <i>Revenue Intelligence Platform for Pricing Optimization, Forecasting, Elasticity Analysis & Business Decision Support</i>
 
