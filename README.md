@@ -9,10 +9,10 @@
 <img src="screenshots/dashboard_overview.png" width="100%"/>
 
 <br/>
+
 <i>Revenue Intelligence Platform for Pricing Optimization, Forecasting, Elasticity Analysis & Business Decision Support</i>
 
 <br/>
-
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge)
 ![Framework](https://img.shields.io/badge/Framework-Streamlit-red?style=for-the-badge)
