@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
-from app.data_loader import load_raw_transactions, build_daily_aggregates, load_processed
+from app.data_loader import load_raw_transactions, build_daily_aggregates, load_processed, save_processed
 from app.forecasting import train_revenue_model, forecast_with_scenario, FEATURE_COLS, load_revenue_model
 from app.pricing import estimate_price_elasticity, recommend_price, load_elasticity
 from app.insights import top_categories_by_revenue, promo_effect, daily_summary, data_quality_report
@@ -36,6 +36,8 @@ st.set_page_config(
 def get_data():
     raw_df = load_raw_transactions()
     daily_df = build_daily_aggregates(raw_df)
+    save_processed(daily_df)
+
     return raw_df, daily_df
 
 def main():
